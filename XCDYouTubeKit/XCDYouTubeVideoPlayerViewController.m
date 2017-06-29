@@ -173,14 +173,17 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 
 - (void) stopWithError:(NSError *)error
 {
-	NSDictionary *userInfo = @{ MPMoviePlayerPlaybackDidFinishReasonUserInfoKey: @(MPMovieFinishReasonPlaybackError),
-	                            XCDMoviePlayerPlaybackDidFinishErrorUserInfoKey: error };
-	[[NSNotificationCenter defaultCenter] postNotificationName:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayer userInfo:userInfo];
-	
-	if (self.isEmbedded)
-		[self.moviePlayer.view removeFromSuperview];
-	else
-		[self.presentingViewController dismissMoviePlayerViewControllerAnimated];
+	// video identifier is nil, implies playing local video
+	if (self.videoIdentifier) {
+		NSDictionary *userInfo = @{ MPMoviePlayerPlaybackDidFinishReasonUserInfoKey: @(MPMovieFinishReasonPlaybackError),
+									XCDMoviePlayerPlaybackDidFinishErrorUserInfoKey: error };
+		[[NSNotificationCenter defaultCenter] postNotificationName:MPMoviePlayerPlaybackDidFinishNotification object:self.moviePlayer userInfo:userInfo];
+		
+		if (self.isEmbedded)
+			[self.moviePlayer.view removeFromSuperview];
+		else
+			[self.presentingViewController dismissMoviePlayerViewControllerAnimated];
+	}
 }
 
 #pragma mark - UIViewController
