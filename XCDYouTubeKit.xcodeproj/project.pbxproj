@@ -11,7 +11,7 @@
 		0D50B58520E5383400FB870F /* WorkaroundInlinePlayerFullScreenButtonBug.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D50B58320E5383400FB870F /* WorkaroundInlinePlayerFullScreenButtonBug.m */; };
 		0D50B58920E5386200FB870F /* XCDYouTubeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D50B58820E5386200FB870F /* XCDYouTubeApp.m */; };
 		0D50B58A20E5386200FB870F /* XCDYouTubeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D50B58820E5386200FB870F /* XCDYouTubeApp.m */; };
-		0D50B58C20E5387D00FB870F /* XCDYouTubeApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D50B58B20E5387D00FB870F /* XCDYouTubeApp.h */; };
+		0D50B58C20E5387D00FB870F /* XCDYouTubeApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D50B58B20E5387D00FB870F /* XCDYouTubeApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D50B58D20E538B200FB870F /* XCDYouTubeApp.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 0D50B58B20E5387D00FB870F /* XCDYouTubeApp.h */; };
 		C20F57A818817D5400EDBFB0 /* XCDYouTubeClientTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C20F57A718817D5400EDBFB0 /* XCDYouTubeClientTestCase.m */; };
 		C2142F2A19644779000FA9C0 /* XCDYouTubeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C2D0CBAC19122A8F00DA8CD4 /* XCDYouTubeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -281,8 +281,8 @@
 				C2142F2A19644779000FA9C0 /* XCDYouTubeKit.h in Headers */,
 				C257F7941C206D26006146D3 /* XCDYouTubeLogger.h in Headers */,
 				C257F7911C206B8F006146D3 /* XCDYouTubeLogger+Private.h in Headers */,
-				0D50B58C20E5387D00FB870F /* XCDYouTubeApp.h in Headers */,
 				C2F0E5901944F83E00D8EBA8 /* XCDYouTubeOperation.h in Headers */,
+				0D50B58C20E5387D00FB870F /* XCDYouTubeApp.h in Headers */,
 				C2F0E5931944F84700D8EBA8 /* XCDYouTubeVideo.h in Headers */,
 				C2F0E5941944F84A00D8EBA8 /* XCDYouTubeVideoOperation.h in Headers */,
 				C215BEB91BE2E5B500F9783B /* XCDYouTubeVideoWebpage.h in Headers */,
