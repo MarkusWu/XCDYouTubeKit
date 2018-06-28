@@ -10,6 +10,7 @@
 #import <XCDYouTubeKit/XCDYouTubeOperation.h>
 #import <XCDYouTubeKit/XCDYouTubeVideo.h>
 #import <XCDYouTubeKit/XCDYouTubeVideoOperation.h>
+#import <XCDYouTubeKit/XCDYouTubeApp.h>
 
 #if TARGET_OS_IOS || (!defined(TARGET_OS_IOS) && TARGET_OS_IPHONE)
 #import <XCDYouTubeKit/XCDYouTubeVideoPlayerViewController.h>
