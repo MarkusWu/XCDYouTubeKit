@@ -32,6 +32,8 @@ static void ConfigureAuxiliaryButtons(id self, SEL _cmd, BOOL flag)
     }
 }
 
+void WorkaroundInlinePlayerFullScreenButtonBug(void);
+
 void WorkaroundInlinePlayerFullScreenButtonBug(void)
 {
     if (![NSProcessInfo.processInfo isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){10, 0, 0}])
