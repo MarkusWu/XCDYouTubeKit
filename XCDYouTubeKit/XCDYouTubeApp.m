@@ -21,6 +21,9 @@ extern void WorkaroundInlinePlayerFullScreenButtonBug(void);
     return instance;
 }
 
+/**
+ Fix a fullscreen button icon bug for iOS >= 10 in MPMoviePlayerController.
+ */
 - (void)fixInlinePlayerFullScreenButtonBug {
     WorkaroundInlinePlayerFullScreenButtonBug();
 }
