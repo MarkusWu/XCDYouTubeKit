@@ -13,11 +13,6 @@
 
 + (instancetype)shared;
 
-/**
- *  The minimum size to enable showing player control on player's viweWillAppear. If the dimensons of the size of presenting view are both greater the this value, then show player control. Otherwise, do not show.
- */
-@property (nonatomic, readwrite) CGSize minSizeToShowPlayerControl;
-
 - (void)fixInlinePlayerFullScreenButtonBug;
 
 @end

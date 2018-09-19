@@ -6,8 +6,6 @@
 
 #import "XCDYouTubeClient.h"
 
-#import "XCDYouTubeApp.h"
-
 #import <objc/runtime.h>
 
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -141,15 +139,7 @@ NSString *const XCDYouTubeVideoUserInfoKey = @"Video";
 	
 	self.embedded = YES;
 	
-	CGSize minSize = [XCDYouTubeApp shared].minSizeToShowPlayerControl;
-	CGSize viewSize = view.bounds.size;
-	
-	if (viewSize.width >= minSize.width && viewSize.height >= minSize.height) {
-		self.moviePlayer.controlStyle = MPMovieControlStyleEmbedded;
-	} else {
-		self.moviePlayer.controlStyle = MPMovieControlStyleNone;
-	}
-	
+	self.moviePlayer.controlStyle = MPMovieControlStyleEmbedded;
 	self.moviePlayer.view.frame = CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height);
 	self.moviePlayer.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	if (![view.subviews containsObject:self.moviePlayer.view])

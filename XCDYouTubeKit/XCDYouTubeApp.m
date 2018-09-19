@@ -12,15 +12,12 @@ extern void WorkaroundInlinePlayerFullScreenButtonBug(void);
 
 @implementation XCDYouTubeApp
 
-@synthesize minSizeToShowPlayerControl = _minSizeToShowPlayerControl;
-
 + (instancetype)shared {
     static XCDYouTubeApp *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[XCDYouTubeApp alloc] init];
     });
-	instance.minSizeToShowPlayerControl = CGSizeMake(300, 150);
     return instance;
 }
 
