@@ -114,5 +114,7 @@ jmimemagic.log
 
 # xcode file
 *~
-**/xcuserdata/*
+**/xcuserdata/
+**/xcshareddata/
 *.DS_Store
+**/*.playground/
