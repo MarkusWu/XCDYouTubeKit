@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, XCDYouTubeRequestType) {
 
 static NSError *YouTubeError(NSError *error, NSSet *regionsAllowed, NSString *languageIdentifier)
 {
-	if (error.code == XCDYouTubeErrorRestrictedPlayback && regionsAllowed.count > 0)
+	if (error.code == XCDYouTubeErrorNoStreamAvailable && regionsAllowed.count > 0)
 	{
 		NSLocale *locale = [NSLocale localeWithLocaleIdentifier:languageIdentifier];
 		NSMutableSet *allowedCountries = [NSMutableSet new];
@@ -247,7 +247,7 @@ static NSError *YouTubeError(NSError *error, NSSet *regionsAllowed, NSString *la
 		else
 		{
 			self.lastError = error;
-			if (error.code > 0)
+			if (error.userInfo[NSLocalizedDescriptionKey])
 				self.youTubeError = error;
 			
 			[self startNextRequest];
@@ -304,7 +304,7 @@ static NSError *YouTubeError(NSError *error, NSSet *regionsAllowed, NSString *la
 	if (self.webpage.isAgeRestricted && self.cookies.count == 0)
 	{
 		NSString *eurl = [@"https://youtube.googleapis.com/v/" stringByAppendingString:self.videoIdentifier];
-		NSString *sts = [(NSObject *)self.embedWebpage.playerConfiguration[@"sts"] description] ?: [(NSObject *)self.webpage.playerConfiguration[@"sts"] description] ?: @"";
+		NSString *sts = self.embedWebpage.sts ?: self.webpage.sts ?: @"";
 		NSDictionary *query = @{ @"video_id": self.videoIdentifier, @"hl": self.languageIdentifier, @"eurl": eurl, @"sts": sts};
 		NSString *queryString = XCDQueryStringWithDictionary(query);
 		NSURL *videoInfoURL = [NSURL URLWithString:[@"https://www.youtube.com/get_video_info?" stringByAppendingString:queryString]];
